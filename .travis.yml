@@ -3,7 +3,6 @@ language: objective-c
 osx_image: xcode12
 
 script:
-  - brew update
   - brew tap colinaaa/logisim-hust
   - travis_wait 60 brew cask install logisim-hust logisim-ita
   - brew cask uninstall logisim-hust logisim-ita
