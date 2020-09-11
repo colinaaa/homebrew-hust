@@ -5,7 +5,7 @@
 
 > homebrew tap for logisim forked by HUST
 >
-> MacOS only!
+> Self tested on MacOS Catalina 10.15.6 with OpenJDK 14.0.2
 
 ## Install
 

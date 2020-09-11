@@ -7,6 +7,8 @@ cask 'logisim-ita' do
   name 'Logisim ITA'
   homepage 'https://github.com/LogisimIt/Logisim'
 
+  depends_on cask: 'java'
+
   container type: :naked
 
   # shim script (https://github.com/Homebrew/homebrew-cask/issues/18809)
