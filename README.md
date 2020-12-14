@@ -10,20 +10,14 @@
 ## Install
 
 ```sh
-brew tap colinaaa/logisim-hust
-```
-
-Then:
-
-```sh
-brew cask install logisim-hust
+brew install colinaaa/logisim-hust/logisim-hust
 ```
 
 Also offer the Cask for [logisim-ita](https://github.com/LogisimIt/Logisim),
 install with:
 
 ```sh
-brew cask install logisim-ita
+brew install colinaaa/logisim-hust/logisim-ita
 ```
 
 ## Author
