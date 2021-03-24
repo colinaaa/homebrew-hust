@@ -8,20 +8,23 @@ cask 'logisim-ita' do
   name 'Logisim ITA'
   homepage 'https://github.com/LogisimIt/Logisim'
 
-  depends_on cask: 'adoptopenjdk'
-
   container type: :naked
 
   # shim script (https://github.com/Homebrew/homebrew-cask/issues/18809)
   shimscript = "#{staged_path}/logisim-ita.wrapper.sh"
-  binary shimscript, target: 'logisim-ita'
 
   preflight do
     IO.write shimscript, <<~EOS
       #!/bin/bash
-      cd "$(dirname "$(readlink -n "${0}")")" && \
-        java "${@}" -jar 'Logisim-ITA.jar'
+      java "${@}" -jar '/Applications/Logisim-ITA.jar'
     EOS
+  end
+
+  app "Logisim-ITA.jar", target: "Logisim-ITA.jar"
+  binary shimscript, target: 'logisim-ita'
+
+  caveats do
+    depends_on_java "8+"
   end
 
   zap trash: '~/Library/Preferences/com.cburch.logisim.plist'

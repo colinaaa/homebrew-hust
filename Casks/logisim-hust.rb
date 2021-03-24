@@ -8,20 +8,22 @@ cask 'logisim-hust' do
   name 'Logisim HUST'
   homepage 'https://github.com/colinaaa/homebrew-hust'
 
-  depends_on cask: 'adoptopenjdk'
-
   container type: :naked
 
   # shim script (https://github.com/Homebrew/homebrew-cask/issues/18809)
   shimscript = "#{staged_path}/logisim-hust.wrapper.sh"
-  binary shimscript, target: 'logisim-hust'
 
   preflight do
     IO.write shimscript, <<~EOS
       #!/bin/bash
-      cd "$(dirname "$(readlink -n "${0}")")" && \
-        java "${@}" -jar 'Logisim-hust.jar'
+      java "${@}" -jar '/Applications/Logisim-hust.jar'
     EOS
+  end
+
+  app "Logisim-hust.jar", target: "Logisim-hust.jar"
+  binary shimscript, target: 'logisim-hust'
+  caveats do
+    depends_on_java "8+"
   end
 
   zap trash: '~/Library/Preferences/com.cburch.logisim.plist'
