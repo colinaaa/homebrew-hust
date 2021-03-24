@@ -13,10 +13,10 @@ env:
 
 jobs:
   test:
-    runs-on: ${{ matrix.version }}
+    runs-on: macos-${{ matrix.version }}
     strategy:
       matrix:
-        version: ["11-arm", "11.0", "10.15", "10.14"]
+        version: ["11.0", "10.15"]
     steps:
       - name: Set up Homebrew
         id: set-up-homebrew
