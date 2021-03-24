@@ -1,6 +1,6 @@
-<h1 align="center">Welcome to logisim-hust 👋</h1>
+<h1 align="center">Welcome to hust 👋</h1>
 
-[![Build Status](https://travis-ci.com/colinaaa/homebrew-logisim-hust.svg?branch=master)](https://travis-ci.com/colinaaa/homebrew-logisim-hust)
+[![Build Status](https://travis-ci.com/colinaaa/homebrew-hust.svg?branch=master)](https://travis-ci.com/colinaaa/homebrew-hust)
 ![License](https://img.shields.io/badge/License-GPL--3-yellow.svg)
 
 > homebrew tap for logisim forked by HUST
@@ -10,21 +10,20 @@
 ## Install
 
 ```sh
-brew install colinaaa/logisim-hust/logisim-hust
+brew install colinaaa/hust/logisim-hust
 ```
 
 Also offer the Cask for [logisim-ita](https://github.com/LogisimIt/Logisim),
 install with:
 
 ```sh
-brew install colinaaa/logisim-hust/logisim-ita
+brew install colinaaa/hust/logisim-ita
 ```
 
 ## Author
 
 👤 **Colin Wang**
 
-* Website: about.outsiders.top
 * Github: [@colinaaa](https://github.com/colinaaa)
 
 ## Show your support

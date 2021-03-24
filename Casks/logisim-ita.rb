@@ -1,13 +1,14 @@
 cask 'logisim-ita' do
   version '2.16.1.2'
   sha256 '5841e8c4adfe3363b845c34eebbe2a2eceaac36ba49f5ef58d773808e4aa95d4'
+  desc 'The logisim fork'
 
   url "https://github.com/LogisimIt/Logisim/releases/download/v#{version}/Logisim-ITA.jar"
   appcast 'https://github.com/LogisimIt/Logisim/releases.atom'
   name 'Logisim ITA'
   homepage 'https://github.com/LogisimIt/Logisim'
 
-  depends_on cask: 'java'
+  depends_on cask: 'adoptopenjdk'
 
   container type: :naked
 

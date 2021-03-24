@@ -3,12 +3,12 @@ cask 'logisim-hust' do
   sha256 'e445889bcc2e812ef27d41e47bccfd51c336ad4123bd69c75e745d1600b0941a'
   desc 'The logisim fork of HUST'
 
-  url "https://github.com/colinaaa/homebrew-logisim-hust/releases/download/v#{version}/Logisim-hust.jar"
-  appcast 'https://github.com/colinaaa/homebrew-logisim-hust/releases.atom'
+  url "https://github.com/colinaaa/homebrew-hust/releases/download/v#{version}/Logisim-hust.jar"
+  appcast 'https://github.com/colinaaa/homebrew-hust/releases.atom'
   name 'Logisim HUST'
-  homepage 'https://github.com/colinaaa/homebrew-logisim-hust'
+  homepage 'https://github.com/colinaaa/homebrew-hust'
 
-  depends_on cask: 'java'
+  depends_on cask: 'adoptopenjdk'
 
   container type: :naked
 
@@ -23,4 +23,6 @@ cask 'logisim-hust' do
         java "${@}" -jar 'Logisim-hust.jar'
     EOS
   end
+
+  zap trash: '~/Library/Preferences/com.cburch.logisim.plist'
 end
