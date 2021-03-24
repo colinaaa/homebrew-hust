@@ -4,5 +4,5 @@ osx_image: xcode12
 
 script:
   - brew tap colinaaa/hust
-  - travis_wait 60 brew cask install logisim-hust logisim-ita
-  - brew cask uninstall logisim-hust logisim-ita
+  - travis_wait 60 brew install logisim-hust logisim-ita colinaaa/hust/mars
+  - brew uninstall logisim-hust logisim-ita colinaaa/hust/mars

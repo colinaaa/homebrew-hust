@@ -20,6 +20,23 @@ install with:
 brew install colinaaa/hust/logisim-ita
 ```
 
+Installing MARS, the MIPS Assembly and Runtime Simulator
+
+```sh
+brew install colinaaa/hust/mars
+```
+
+## Usage
+
+Directly run in bash:
+```bash
+logisim-hust
+
+logisim-ita
+
+mars
+```
+
 ## Author
 
 👤 **Colin Wang**
