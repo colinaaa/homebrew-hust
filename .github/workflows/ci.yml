@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+env:
+  HOMEBREW_DEVELOPER: 1
+  HOMEBREW_NO_AUTO_UPDATE: 1
+  HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  test:
+    runs-on: ${{ matrix.version }}
+    strategy:
+      matrix:
+        version: ["11-arm", "11.0", "10.15", "10.14"]
+    steps:
+      - name: Set up Homebrew
+        id: set-up-homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+        with:
+          test-bot: false
+
+      - name: Tap colinaaa/hust
+        run: brew tap colinaaa/hust
+
+      - name: Run brew install
+        id: install
+        run: brew install --cask logisim-hust logisim-ita colinaaa/hust/mars
+        timeout-minutes: 10
+
+      - name: Run brew uninstall
+        run: brew uninstall --cask logisim-hust logisim-ita colinaaa/hust/mars
+        if: always() && steps.install.outcome == 'success' && !fromJSON(steps.info.outputs.manual_installer)
+        timeout-minutes: 10
