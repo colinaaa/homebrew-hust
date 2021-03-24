@@ -13,10 +13,10 @@ env:
 
 jobs:
   test:
-    runs-on: macos-${{ matrix.version }}
     strategy:
       matrix:
-        version: ["11.0", "10.15"]
+        os: ["macos-11.0", "macos-10.15"]
+    runs-on: ${{ matrix.os }}
     steps:
       - name: Set up Homebrew
         id: set-up-homebrew
@@ -34,5 +34,4 @@ jobs:
 
       - name: Run brew uninstall
         run: brew uninstall --cask logisim-hust logisim-ita colinaaa/hust/mars
-        if: always() && steps.install.outcome == 'success' && !fromJSON(steps.info.outputs.manual_installer)
         timeout-minutes: 10
